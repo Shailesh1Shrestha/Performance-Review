@@ -23,11 +23,31 @@ What wrong with above code?
 - Dependency change cause useEffect to run again. 
   */
 
-  function handleClick() {
+  function handleIncrement() {
     setCount(count + 1);
   }
 
-  return <h1 onClick={handleClick}>{count}</h1>;
+  function handleDecrement() {
+    setCount(count - 1);
+  }
+
+  return (
+    <div className="flex items-center justify-center gap-x-4">
+      <div
+        onClick={handleIncrement}
+        className="w-fit bg-white cursor-pointer text-black border text-2xl px-4 py-2 rounded-md"
+      >
+        +
+      </div>
+      <h1>{count}</h1>
+      <div
+        onClick={handleDecrement}
+        className="w-fit bg-white cursor-pointer text-black border text-2xl px-4 py-2 rounded-md"
+      >
+        -
+      </div>
+    </div>
+  );
 
   /* 
   What the above code do:

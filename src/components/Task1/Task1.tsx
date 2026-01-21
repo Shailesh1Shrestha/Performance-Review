@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { EmployeeRow } from "./EmployeeRow";
 import { mockEmployees } from "./mockEmployee";
 import type { Employee } from "./types/Empolyee.type";
+
 export const EmployeeDashboard = () => {
   const [search, setSearch] = useState("");
   const [list, setList] = useState<Employee[]>(
@@ -36,11 +37,12 @@ export const EmployeeDashboard = () => {
   return (
     <>
       <input
+        className="bg-white h-10 rounded-md text-black p-2"
         value={search}
         onChange={handlesSearchChange}
         placeholder="Search employee"
       />
-      <p>Average Score: {averageScore.toFixed(2)}</p>
+      <p className="mt-2">Average Score: {averageScore.toFixed(2)}</p>
       {filteredEmployees.map((emp) => (
         <EmployeeRow key={emp.id} employee={emp} onPromote={promoteEmployee} />
       ))}

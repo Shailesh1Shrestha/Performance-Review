@@ -33,7 +33,11 @@ useEffect(() => {
 */
   return (
     <>
-      <input onChange={handleInputChange} />
+      <input
+        className="bg-white text-black h-10 rounded-md  p-2"
+        onChange={handleInputChange}
+        placeholder="Search"
+      />
 
       {filteredUsers?.map((u) => (
         <p key={u.id}>{u.name}</p>
